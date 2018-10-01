@@ -1,6 +1,6 @@
 # micro-mailer
 
-> Microservice to send e-mail with Mailgun
+> A microservice to send simple email templates
 
 I currently use this service to send simple emails like email confirmation
 

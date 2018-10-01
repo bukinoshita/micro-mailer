@@ -1,9 +1,9 @@
 {
   "name": "micro-mailer",
   "version": "0.0.0",
-  "description": "Micro mailer",
-  "main": "server.js",
-  "repository": "bukinoshita/micro-mailer.git",
+  "description": "A microservice to send simple email templates",
+  "main": "index.js",
+  "repository": "bukinoshita/micro-mailer",
   "author": "bukinoshita <bukinoshita@gmail.com>",
   "license": "MIT",
   "scripts": {
