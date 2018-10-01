@@ -1,0 +1,32 @@
+{
+  "name": "micro-mailer",
+  "version": "0.0.0",
+  "description": "Micro mailer",
+  "main": "server.js",
+  "repository": "bukinoshita/micro-mailer.git",
+  "author": "bukinoshita <bukinoshita@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev . -p 4000",
+    "lint": "xo --quiet"
+  },
+  "dependencies": {
+    "mailgun-js": "^0.21.0",
+    "mailgun.js": "^2.0.1",
+    "micro": "^9.3.3",
+    "querystring": "^0.2.0",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^3.1.0",
+    "micro-dev": "^3.0.0",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "extends": "prettier"
+  },
+  "engines": {
+    "node": ">=8"
+  }
+}
