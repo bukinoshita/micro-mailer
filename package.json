@@ -12,7 +12,6 @@
     "lint": "xo --quiet"
   },
   "dependencies": {
-    "mailgun-js": "^0.21.0",
     "mailgun.js": "^2.0.1",
     "micro": "^9.3.3",
     "querystring": "^0.2.0",
