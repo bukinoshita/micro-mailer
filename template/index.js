@@ -1,1 +1,5 @@
-module.exports = `<h1>Hi</h1>`
+const subscribing = require('./subscribing')
+
+module.exports = {
+    subscribing
+}
