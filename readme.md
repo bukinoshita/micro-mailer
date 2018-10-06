@@ -27,8 +27,8 @@ Define the following environment variables:
 - `MAILGUN_DOMAIN` - Your mailgun domain
 - `MAILGUN_FROM` - The email you like to send emails
 - `CORS_ORIGIN` — The origin for CORS, defaults to `*`
-- `RATE_LIMIT_WINDOW` — How long to keep records of requests in memory in `ms`, default to `1s`
-- `RATE_LIMIT_LIMIT` — Max number of requests during window, default to `10`
+- `RATE_LIMIT_WINDOW` — How long to keep records of requests in memory in `ms`, defaults to `1s`
+- `RATE_LIMIT_LIMIT` — Max number of requests during window, defaults to `10`
 
 ## License
 
