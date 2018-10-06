@@ -15,6 +15,7 @@
     "mailgun.js": "^2.0.1",
     "micro": "^9.3.3",
     "micro-cors": "^0.1.0",
+    "micro-ratelimit": "^0.4.0",
     "querystring": "^0.2.0",
     "url": "^0.11.0"
   },
