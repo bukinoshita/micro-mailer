@@ -6,12 +6,12 @@
 
 ### With [`now`](https://now.sh)
 
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/bukinoshita/micro-mailer&NODE_ENV=production&env=MAILGUN_API_KEY&env=MAILGUN_DOMAIN&env=MAILGUN_FROM&env=MAILGUN_SUBJECT&env=CORS_ORIGIN)
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/bukinoshita/micro-mailer&NODE_ENV=production&env=MAILGUN_API_KEY&env=MAILGUN_DOMAIN&env=MAILGUN_FROM&env=CORS_ORIGIN)
 
 or
 
 ```
-$ now bukinoshita/micro-mailer -e NODE_ENV=production -e MAILGUN_API_KEY=xxx -e MAILGUN_DOMAIN=xxx -e MAILGUN_FROM=xxx -e MAILGUN_SUBJECT=xxx -e CORS_ORIGIN=xxx
+$ now bukinoshita/micro-mailer -e NODE_ENV=production -e MAILGUN_API_KEY=xxx -e MAILGUN_DOMAIN=xxx -e MAILGUN_FROM=xxx -e CORS_ORIGIN=xxx
 ```
 
 ### Manual
@@ -26,7 +26,6 @@ Define the following environment variables:
 - `MAILGUN_API_KEY` - [Mailgun api key](https://app.mailgun.com/app/domains).
 - `MAILGUN_DOMAIN` - Your mailgun domain
 - `MAILGUN_FROM` - The email you like to send emails
-- `MAILGUN_SUBJECT` - The subject in users email
 - `CORS_ORIGIN` — The origin for CORS, defaults to `*`
 
 ## License
