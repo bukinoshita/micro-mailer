@@ -11,7 +11,6 @@ const templates = require('./templates')
 const key = process.env.MAILGUN_API_KEY
 const domain = process.env.MAILGUN_DOMAIN
 const from = process.env.MAILGUN_FROM
-const subject = process.env.MAILGUN_SUBJECT || from
 const origin = process.env.CORS_ORIGIN || '*'
 
 const cors = microCors({ origin, allowMethods: ['GET'] })
@@ -37,7 +36,9 @@ if (!from) {
 const handler = async (req, res) => {
   const url = parse(req.url)
   const mailer = mailgun.client({ username: 'api', key })
-  const { email, template = 'preBeta', company } = qs.parse(url.query)
+  const { email, template = 'preBeta', subject = from, company } = qs.parse(
+    url.query
+  )
 
   if (email) {
     try {
