@@ -2,6 +2,7 @@
 const { parse } = require('url')
 const qs = require('querystring')
 const mailgun = require('mailgun.js')
+const cors = require('micro-cors')()
 
 // Template
 const html = require('./template')
@@ -30,7 +31,7 @@ if (!from) {
   )
 }
 
-module.exports = async (req, res) => {
+const handleMailer = async (req, res) => {
   const url = parse(req.url)
   const mailer = mailgun.client({ username: 'api', key })
   const { email } = qs.parse(url.query)
@@ -47,3 +48,5 @@ module.exports = async (req, res) => {
 
   return res.end('E-mail is required!')
 }
+
+module.exports = cors(handleMailer)
