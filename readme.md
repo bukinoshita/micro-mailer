@@ -2,8 +2,6 @@
 
 > A microservice to send simple email templates
 
-I currently use this service to send simple emails like email confirmation
-
 ## Usage
 
 ### With [`now`](https://now.sh)
