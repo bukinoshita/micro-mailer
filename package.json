@@ -1,6 +1,6 @@
 {
   "name": "micro-mailer",
-  "version": "0.0.0-canary.0",
+  "version": "0.0.0-canary.1",
   "description": "A microservice to send simple email templates",
   "main": "index.js",
   "repository": "bukinoshita/micro-mailer",
