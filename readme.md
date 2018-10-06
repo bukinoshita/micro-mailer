@@ -1,4 +1,10 @@
-# micro-mailer
+<p align="center">
+    <br/>
+  <br/>
+  <img src=".github/micro-mailer.png">
+  <br/>
+  <br/>
+</p>
 
 > A microservice to send simple email templates
 
