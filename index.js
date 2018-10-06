@@ -3,6 +3,7 @@ const { parse } = require('url')
 const qs = require('querystring')
 const mailgun = require('mailgun.js')
 const microCors = require('micro-cors')
+const rateLimit = require('micro-ratelimit')
 
 // Template
 const templates = require('./templates')
@@ -12,8 +13,11 @@ const key = process.env.MAILGUN_API_KEY
 const domain = process.env.MAILGUN_DOMAIN
 const from = process.env.MAILGUN_FROM
 const origin = process.env.CORS_ORIGIN || '*'
+const window = process.env.RATE_LIMIT_WINDOW || 1000
+const limit = process.env.RATE_LIMIT || 10
 
 const cors = microCors({ origin, allowMethods: ['GET'] })
+const rateLimitOptions = { window, limit, headers: true }
 
 if (!key) {
   throw new Error(
@@ -54,4 +58,4 @@ const handler = async (req, res) => {
   res.end('E-mail is required!')
 }
 
-module.exports = cors(handler)
+module.exports = rateLimit(rateLimitOptions, cors(handler))
