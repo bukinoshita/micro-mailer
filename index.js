@@ -2,7 +2,7 @@
 const { parse } = require('url')
 const qs = require('querystring')
 const mailgun = require('mailgun.js')
-const cors = require('micro-cors')()
+const microCors = require('micro-cors')
 
 // Template
 const templates = require('./templates')
@@ -12,6 +12,9 @@ const key = process.env.MAILGUN_API_KEY
 const domain = process.env.MAILGUN_DOMAIN
 const from = process.env.MAILGUN_FROM
 const subject = process.env.MAILGUN_SUBJECT || from
+const origin = process.env.CORS_ORIGIN || '*'
+
+const cors = microCors({ origin, allowMethods: ['GET'] })
 
 if (!key) {
   throw new Error(
@@ -31,7 +34,7 @@ if (!from) {
   )
 }
 
-const handleMailer = async (req, res) => {
+const handler = async (req, res) => {
   const url = parse(req.url)
   const mailer = mailgun.client({ username: 'api', key })
   const { email, template = 'preBeta', company } = qs.parse(url.query)
@@ -50,4 +53,4 @@ const handleMailer = async (req, res) => {
   res.end('E-mail is required!')
 }
 
-module.exports = cors(handleMailer)
+module.exports = cors(handler)
