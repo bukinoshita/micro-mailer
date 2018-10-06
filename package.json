@@ -9,7 +9,8 @@
   "scripts": {
     "start": "micro",
     "dev": "micro-dev . -p 4000",
-    "lint": "xo --quiet"
+    "lint": "xo --quiet",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "mailgun.js": "^2.0.1",
@@ -20,7 +21,10 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^3.1.0",
+    "husky": "^1.1.1",
+    "lint-staged": "^7.3.0",
     "micro-dev": "^3.0.0",
+    "prettier": "^1.14.3",
     "xo": "^0.23.0"
   },
   "xo": {
@@ -29,6 +33,13 @@
       "unicorn/throw-new-error": 0,
       "unicorn/new-for-builtins": 0
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --semi false --single-quote --write",
+      "yarn lint",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">=8"
